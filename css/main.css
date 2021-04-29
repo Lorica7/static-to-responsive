@@ -11,7 +11,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-flow: row wrap;
   padding: 5px;
 }
 
@@ -43,14 +43,16 @@ header {
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-flow: column nowrap;
+  display: flex;
+  align-content: center;
+  flex-flow: row wrap;
 }
 
 header h1 {
   margin: 0;
   padding: 20px 0;
   border-bottom: 3px solid #77a466;
+  align-items: center;
 }
 header h1 span {
   color: #77a466;
@@ -60,7 +62,7 @@ header nav {
   padding: 20px 0;
 }
 header nav ul {
-  margin: 0;
+  margin: 20px;
   padding: 0;
 }
 header nav ul li {
@@ -81,7 +83,8 @@ header nav ul li a {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-flow: column nowrap;
+  width: 100%;
+  flex-flow: row wrap;
 }
 
 .main-image {
@@ -159,10 +162,51 @@ footer {
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-top: 30px;
+  width: 100%;
+  padding: 20px;
 }
 footer span {
   font-family: "Galada", cursive;
   text-transform: lowercase;
   color: #77a466;
   font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  header {
+    align-content: center;
+  }
+  header h1 {
+    border-bottom: none;
+    margin-right: 20px;
+    align-self: center;
+  }
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    flex-flow: row wrap;
+  }
+  li {
+    margin-right: 20px;
+  }
+
+  .bottom-section {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  .section-one,
+  .section-two,
+  .section-three {
+    width: 30%;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 768px) {
+  header h1 {
+    width: 100%;
+    text-align: center;
+  }
 }
